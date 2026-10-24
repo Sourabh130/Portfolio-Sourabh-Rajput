@@ -213,8 +213,11 @@ function initCertificatesShowcase() {
       card.setAttribute('data-category', cert.category);
 
       const hasImage = Boolean(cert.image && cert.image.trim() !== '');
+      const encodedImg = hasImage ? encodeURI(cert.image) : '';
+      const encodedFile = cert.fileUrl ? encodeURI(cert.fileUrl) : encodedImg;
+
       const thumbHtml = hasImage
-        ? `<img class="cert-thumb" src="${cert.image}" alt="${cert.title}" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'cert-thumb-placeholder\\'><i class=\\'fa-solid fa-file-shield\\'></i><span>Credential Document</span></div>';" />`
+        ? `<img class="cert-thumb" src="${encodedImg}" alt="${cert.title}" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'cert-thumb-placeholder\\'><i class=\\'fa-solid fa-file-shield\\'></i><span>Credential Document</span></div>';" />`
         : `<div class="cert-thumb-placeholder">
              <i class="fa-solid fa-file-pdf"></i>
              <span style="font-weight: 600; font-size: 0.85rem;">Official PDF Document</span>
@@ -253,7 +256,7 @@ function initCertificatesShowcase() {
               </button>
               ${verifyBtnHtml}
             </div>
-            <a href="${cert.fileUrl || cert.image}" download class="cert-btn" title="Download Document">
+            <a href="${encodedFile}" download class="cert-btn" title="Download Document">
               <i class="fa-solid fa-download"></i>
             </a>
           </div>
@@ -329,14 +332,23 @@ function initModals() {
     const certIdEl = document.getElementById('certModalId');
     const verifyLinkEl = document.getElementById('certModalVerifyLink');
     const downloadLinkEl = document.getElementById('certModalDownloadLink');
+    const fullViewLinkEl = document.getElementById('certModalFullViewLink');
 
     if (titleEl) titleEl.textContent = cert.title;
     if (issuerEl) issuerEl.innerHTML = `<strong>Issuer:</strong> ${cert.issuer} &bull; <strong>Date:</strong> ${cert.date || 'Verified'}`;
     if (descEl) descEl.textContent = cert.description || '';
     if (certIdEl) certIdEl.textContent = cert.certId ? `Credential ID: ${cert.certId}` : '';
 
+    const hasImage = Boolean(cert.image && cert.image.trim() !== '');
+    const encodedImg = hasImage ? encodeURI(cert.image) : '';
+    const encodedFile = cert.fileUrl ? encodeURI(cert.fileUrl) : encodedImg;
+
     if (downloadLinkEl) {
-      downloadLinkEl.href = cert.fileUrl || cert.image;
+      downloadLinkEl.href = encodedFile || encodedImg;
+    }
+
+    if (fullViewLinkEl) {
+      fullViewLinkEl.href = encodedImg || encodedFile;
     }
 
     if (verifyLinkEl) {
@@ -349,11 +361,23 @@ function initModals() {
     }
 
     if (mediaContainer) {
-      const isPdf = (cert.fileUrl && cert.fileUrl.endsWith('.pdf')) && (!cert.image || cert.image === '');
-      if (cert.image && cert.image.trim() !== '') {
-        mediaContainer.innerHTML = `<img src="${cert.image}" alt="${cert.title}" style="max-height: 58vh; max-width: 100%; object-fit: contain;" />`;
-      } else if (cert.fileUrl) {
-        mediaContainer.innerHTML = `<iframe src="${cert.fileUrl}" type="application/pdf" style="width: 100%; height: 58vh; border: none;"></iframe>`;
+      if (hasImage) {
+        mediaContainer.innerHTML = `
+          <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <img src="${encodedImg}" alt="${cert.title}" 
+                 style="max-height: 62vh; max-width: 100%; width: auto; height: auto; object-fit: contain; cursor: zoom-in; display: block; border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);" 
+                 title="Click to open full resolution in new tab"
+                 onclick="window.open('${encodedImg}', '_blank')"
+                 onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\\'padding: 3rem; text-align: center; color: var(--accent-cyan);\\'><i class=\\'fa-solid fa-file-pdf\\' style=\\'font-size: 3rem; margin-bottom: 1rem;\\'></i><p>Preview document directly below.</p><a href=\\'${encodedFile}\\' target=\\'_blank\\' class=\\'cert-btn cert-btn-primary\\' style=\\'margin-top: 1rem;\\'>Open Document</a></div>';" />
+            <div style="margin-top: 0.6rem; font-size: 0.78rem; color: var(--text-muted); text-align: center;">
+              <i class="fa-solid fa-magnifying-glass-plus"></i> Click image or &ldquo;Full Screen&rdquo; to view full high-resolution original
+            </div>
+          </div>
+        `;
+      } else if (encodedFile) {
+        mediaContainer.innerHTML = `
+          <iframe src="${encodedFile}" type="application/pdf" style="width: 100%; height: 62vh; border: none; border-radius: 6px; background: #ffffff;"></iframe>
+        `;
       }
     }
   }

@@ -123,17 +123,6 @@
         <div class="profile-card-wrapper">
           <div class="profile-glow-ring"></div>
 
-          <!-- Floating Badges -->
-          <div class="floating-badge badge-top-left">
-            <i class="fa-brands fa-react"></i> Full-Stack Dev
-          </div>
-          <div class="floating-badge badge-mid-right">
-            <i class="fa-brands fa-salesforce"></i> Salesforce Champion
-          </div>
-          <div class="floating-badge badge-bottom-right">
-            <i class="fa-brands fa-google"></i> Google Ambassador
-          </div>
-
           <div class="profile-card">
             <div class="profile-img-container">
               <img src="./assets/images/sourabh-photo.jpg" alt="Sourabh Rajput" class="profile-img" />
@@ -146,6 +135,22 @@
               <span class="badge-verified">
                 <i class="fa-solid fa-circle-check"></i> Verified Engineer
               </span>
+            </div>
+          </div>
+
+          <!-- Prominent Honor Badges Row - Cleanly positioned below photo so portrait is never hidden -->
+          <div class="profile-badges-row">
+            <div class="profile-pill pill-salesforce" title="Salesforce Developer & Agentblazer Champion">
+              <i class="fa-brands fa-salesforce"></i>
+              <span>Salesforce Champion</span>
+            </div>
+            <div class="profile-pill pill-google" title="Official Google Student Ambassador Lead">
+              <i class="fa-brands fa-google"></i>
+              <span>Google Ambassador</span>
+            </div>
+            <div class="profile-pill pill-react" title="Full-Stack Developer (MERN & Next.js)">
+              <i class="fa-brands fa-react"></i>
+              <span>Full-Stack Dev</span>
             </div>
           </div>
         </div>
@@ -1036,9 +1041,12 @@
           </button>
         </div>
 
-        <div style="display: flex; gap: 0.6rem;">
+        <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+          <a href="#" target="_blank" rel="noopener" class="cert-btn" id="certModalFullViewLink" title="Open full resolution in a new tab">
+            <i class="fa-solid fa-up-right-from-square"></i> Full Screen
+          </a>
           <a href="#" target="_blank" rel="noopener" class="cert-btn" id="certModalVerifyLink">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify
+            <i class="fa-solid fa-circle-check"></i> Verify
           </a>
           <a href="#" download class="cert-btn cert-btn-primary" id="certModalDownloadLink">
             <i class="fa-solid fa-download"></i> Download File
