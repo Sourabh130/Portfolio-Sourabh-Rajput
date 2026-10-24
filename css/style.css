@@ -586,7 +586,7 @@ button, input, textarea, select {
 .profile-info-banner {
   margin-top: 1.25rem;
   padding: 0.85rem 1rem;
-  background: rgba(15, 23, 42, 0.6);
+  background: var(--bg-card-hover);
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
   display: flex;
@@ -959,11 +959,27 @@ button, input, textarea, select {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+}
+
+.project-card:nth-child(1) .project-banner {
+  background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%);
 }
 
 .project-card:nth-child(2) .project-banner {
-  background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%);
+  background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
+}
+
+.project-card:nth-child(3) .project-banner {
+  background: linear-gradient(135deg, #0c4a6e 0%, #0284c7 100%);
+}
+
+.project-card:nth-child(4) .project-banner {
+  background: linear-gradient(135deg, #4a044e 0%, #701a75 100%);
+}
+
+.project-card:nth-child(5) .project-banner {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
 }
 
 .project-banner-pattern {

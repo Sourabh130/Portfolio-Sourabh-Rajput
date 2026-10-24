@@ -18,15 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
 function initTheme() {
   const themeToggleBtn = document.getElementById('themeToggleBtn');
   const themeIcon = document.getElementById('themeIcon');
-  const storedTheme = localStorage.getItem('sr_theme') || 'dark';
+  const storedTheme = localStorage.getItem('sr_theme') || 'light';
 
   document.documentElement.setAttribute('data-theme', storedTheme);
   updateThemeIcon(storedTheme);
 
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('sr_theme', newTheme);
       updateThemeIcon(newTheme);

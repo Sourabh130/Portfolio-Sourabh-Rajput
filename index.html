@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -48,8 +48,8 @@
       </nav>
 
       <div class="nav-actions">
-        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme">
-          <i class="fa-solid fa-sun" id="themeIcon"></i>
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme" title="Switch to Dark Mode">
+          <i class="fa-solid fa-moon" id="themeIcon"></i>
         </button>
         <button class="nav-resume-btn open-resume-btn">
           <i class="fa-solid fa-file-invoice"></i> Resume
@@ -280,7 +280,7 @@
   </section>
 
   <!-- ================= Skills Section ================= -->
-  <section class="section" id="skills" style="background: rgba(15, 23, 42, 0.4);">
+  <section class="section" id="skills" style="background: var(--bg-secondary);">
     <div class="container">
       <div class="section-header">
         <span class="section-badge"><i class="fa-solid fa-microchip"></i> Technical Proficiency</span>
@@ -542,14 +542,59 @@
       </div>
 
       <div class="projects-grid">
-        <!-- Project 1: VoltSync -->
+        <!-- Project 1: Skill Scout (SIH 2025) -->
+        <div class="project-card">
+          <div class="project-banner">
+            <div class="project-banner-pattern"></div>
+            <span class="project-date-badge"><i class="fa-solid fa-trophy"></i> SIH 2025</span>
+            <div class="project-banner-content">
+              <i class="fa-solid fa-person-running project-banner-icon"></i>
+              <h3 style="font-size: 1.35rem; font-weight: 800; color: #fff;">Skill Scout</h3>
+            </div>
+          </div>
+
+          <div class="project-body">
+            <h3 class="project-title">Skill Scout: Mobile AI Sports Talent Platform</h3>
+            <p class="project-description">
+              An AI-powered mobile sports assessment platform engineered for <strong>Smart India Hackathon 2025 (SIH25073)</strong> to democratize athletic scouting across rural and urban youth through smartphone camera telemetry and unbiased AI rankings.
+            </p>
+
+            <ul class="project-highlights">
+              <li>Built with <strong>Computer Vision &amp; Motion Tracking</strong> to capture real-time 40-yard dash sprints, agility drills, and vertical jump biomechanics.</li>
+              <li>Integrated <strong>Deep Learning skill evaluation</strong> calculating objective speed, stamina, and strength metrics without expensive hardware.</li>
+              <li>Engineered with <strong>Flutter &amp; Edge AI hybrid models</strong> to generate verified athletic portfolios connecting grassroots talent directly with recruiters and SAI coaches.</li>
+            </ul>
+
+            <div class="project-tech-stack">
+              <span class="tech-badge">Flutter</span>
+              <span class="tech-badge">Dart</span>
+              <span class="tech-badge">Computer Vision</span>
+              <span class="tech-badge">Edge AI</span>
+              <span class="tech-badge">Deep Learning</span>
+              <span class="tech-badge">Sports Tech</span>
+            </div>
+
+            <div class="project-footer">
+              <div class="project-links">
+                <a href="https://github.com/Sourabh130/Face-Detection" target="_blank" rel="noopener" class="link-btn">
+                  <i class="fa-brands fa-github"></i> Repository
+                </a>
+              </div>
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-indigo);">
+                <i class="fa-solid fa-award"></i> Spark Seeker 2.0
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: VoltSync -->
         <div class="project-card">
           <div class="project-banner">
             <div class="project-banner-pattern"></div>
             <span class="project-date-badge"><i class="fa-regular fa-calendar"></i> May 2026</span>
             <div class="project-banner-content">
               <i class="fa-solid fa-charging-station project-banner-icon"></i>
-              <h3 style="font-size: 1.4rem; font-weight: 800;">VoltSync</h3>
+              <h3 style="font-size: 1.35rem; font-weight: 800; color: #fff;">VoltSync</h3>
             </div>
           </div>
 
@@ -576,7 +621,7 @@
 
             <div class="project-footer">
               <div class="project-links">
-                <a href="https://github.com/sourabh130" target="_blank" rel="noopener" class="link-btn">
+                <a href="https://github.com/Sourabh130/VoltSync-" target="_blank" rel="noopener" class="link-btn">
                   <i class="fa-brands fa-github"></i> Repository
                 </a>
               </div>
@@ -587,21 +632,111 @@
           </div>
         </div>
 
-        <!-- Project 2: Citizen Karma Score -->
+        <!-- Project 3: Local Marketing Connection -->
+        <div class="project-card">
+          <div class="project-banner">
+            <div class="project-banner-pattern"></div>
+            <span class="project-date-badge"><i class="fa-solid fa-building-columns"></i> BIST Capstone</span>
+            <div class="project-banner-content">
+              <i class="fa-solid fa-shop project-banner-icon"></i>
+              <h3 style="font-size: 1.35rem; font-weight: 800; color: #fff;">Local Marketing Connection</h3>
+            </div>
+          </div>
+
+          <div class="project-body">
+            <h3 class="project-title">Local Marketing Connection: Hyperlocal Commerce</h3>
+            <p class="project-description">
+              A community-driven hyperlocal web platform developed at <strong>BIST Bhopal</strong> connecting street and neighborhood shopkeepers with local buyers to bridge the gap created by e-commerce monopolies.
+            </p>
+
+            <ul class="project-highlights">
+              <li>Built dual <strong>Seller and Buyer applications</strong> allowing local merchants to digitize product catalogs and broadcast neighborhood promotions.</li>
+              <li>Implemented <strong>interactive geolocation maps &amp; search filters</strong> to help residents find, order, and support nearby verified neighborhood stores.</li>
+              <li>Designed to empower local economies with personalized community engagement and reliable merchant registration systems.</li>
+            </ul>
+
+            <div class="project-tech-stack">
+              <span class="tech-badge">HTML5</span>
+              <span class="tech-badge">CSS3</span>
+              <span class="tech-badge">JavaScript (ES6+)</span>
+              <span class="tech-badge">Geolocation API</span>
+              <span class="tech-badge">Responsive UI</span>
+              <span class="tech-badge">Data Handling</span>
+            </div>
+
+            <div class="project-footer">
+              <div class="project-links">
+                <a href="https://github.com/Sourabh130/Local-Marketing-Connection" target="_blank" rel="noopener" class="link-btn">
+                  <i class="fa-brands fa-github"></i> Repository
+                </a>
+              </div>
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-cyan);">
+                <i class="fa-solid fa-store"></i> Local Retail
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: MindHeaven -->
+        <div class="project-card">
+          <div class="project-banner">
+            <div class="project-banner-pattern"></div>
+            <span class="project-date-badge"><i class="fa-solid fa-heart-pulse"></i> Digital Health</span>
+            <div class="project-banner-content">
+              <i class="fa-solid fa-spa project-banner-icon"></i>
+              <h3 style="font-size: 1.35rem; font-weight: 800; color: #fff;">MindHeaven</h3>
+            </div>
+          </div>
+
+          <div class="project-body">
+            <h3 class="project-title">MindHeaven: AI Emotional Wellness Companion</h3>
+            <p class="project-description">
+              A gentle, tech-enabled emotional companion app designed to support mental well-being anytime, anywhere through empathetic AI conversations, mindful breathwork, and mood tracking without clinical pressure.
+            </p>
+
+            <ul class="project-highlights">
+              <li>Developed an intuitive <strong>Daily Mood Tracker &amp; Sentiment Analyzer</strong> for daily emotional logging and trend insights.</li>
+              <li>Engineered an <strong>Empathetic AI Conversational Layer</strong> that actively listens, validates emotions, and suggests tailored calming exercises.</li>
+              <li>Integrated interactive <strong>visual breathwork guides</strong> ("Breathe - Find your center") and an encrypted personal digital reflection journal.</li>
+            </ul>
+
+            <div class="project-tech-stack">
+              <span class="tech-badge">Flutter</span>
+              <span class="tech-badge">Dart</span>
+              <span class="tech-badge">Empathetic AI</span>
+              <span class="tech-badge">Sentiment Analysis</span>
+              <span class="tech-badge">Mindfulness UI</span>
+              <span class="tech-badge">Encrypted Storage</span>
+            </div>
+
+            <div class="project-footer">
+              <div class="project-links">
+                <a href="https://github.com/sourabh130" target="_blank" rel="noopener" class="link-btn">
+                  <i class="fa-brands fa-github"></i> Repository
+                </a>
+              </div>
+              <span style="font-size: 0.8rem; font-weight: 700; color: #c084fc;">
+                <i class="fa-solid fa-heart"></i> Mental Wellness
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Citizen Karma Score -->
         <div class="project-card">
           <div class="project-banner">
             <div class="project-banner-pattern"></div>
             <span class="project-date-badge"><i class="fa-regular fa-calendar"></i> Jul 2024</span>
             <div class="project-banner-content">
               <i class="fa-solid fa-hand-holding-heart project-banner-icon"></i>
-              <h3 style="font-size: 1.4rem; font-weight: 800;">Citizen Karma Score</h3>
+              <h3 style="font-size: 1.35rem; font-weight: 800; color: #fff;">Citizen Karma Score</h3>
             </div>
           </div>
 
           <div class="project-body">
             <h3 class="project-title">Citizen Karma Score: Civic Engagement Platform</h3>
             <p class="project-description">
-              A secure civic engagement platform enabling citizens to register via National ID, track verifiable social actions like volunteering, and redeem earned rewards.
+              A secure civic engagement platform enabling citizens to register via National ID, track verifiable social actions like volunteering, and redeem earned rewards on a transparent ledger.
             </p>
 
             <ul class="project-highlights">
@@ -621,7 +756,7 @@
 
             <div class="project-footer">
               <div class="project-links">
-                <a href="https://github.com/sourabh130" target="_blank" rel="noopener" class="link-btn">
+                <a href="https://github.com/Sourabh130/Citizen-Karma-Score" target="_blank" rel="noopener" class="link-btn">
                   <i class="fa-brands fa-github"></i> Repository
                 </a>
               </div>
@@ -636,7 +771,7 @@
   </section>
 
   <!-- ================= Experience Section ================= -->
-  <section class="section" id="experience" style="background: rgba(15, 23, 42, 0.4);">
+  <section class="section" id="experience" style="background: var(--bg-secondary);">
     <div class="container">
       <div class="section-header">
         <span class="section-badge"><i class="fa-solid fa-briefcase"></i> Experience &amp; Leadership</span>
@@ -765,7 +900,7 @@
   </section>
 
   <!-- ================= Education Section ================= -->
-  <section class="section" id="education" style="background: rgba(15, 23, 42, 0.4);">
+  <section class="section" id="education" style="background: var(--bg-secondary);">
     <div class="container">
       <div class="section-header">
         <span class="section-badge"><i class="fa-solid fa-graduation-cap"></i> Academic Background</span>
@@ -890,7 +1025,7 @@
   </section>
 
   <!-- ================= Contact Section ================= -->
-  <section class="section" id="contact" style="background: rgba(15, 23, 42, 0.4);">
+  <section class="section" id="contact" style="background: var(--bg-secondary);">
     <div class="container">
       <div class="section-header">
         <span class="section-badge"><i class="fa-solid fa-paper-plane"></i> Get In Touch</span>

@@ -449,7 +449,7 @@ const CERTIFICATES_DATA = [
     badge: "Tata Crucible",
     date: "2025",
     certId: "TATA-CRUCIBLE-2025",
-    image: "",
+    image: "./certificates/Tata cur/Tata Crucible Prelims Sourabh Rajput.jpg",
     fileUrl: "./certificates/Tata cur/Tata_Cruible_Prelims_Level1 (1).pdf",
     verifyUrl: "",
     description: "Participated in India's foremost enterprise and tech intelligence quiz challenge organized annually by the Tata Group.",
